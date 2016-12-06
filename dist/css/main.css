@@ -1,0 +1,132 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit; }
+
+.scene {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-image: url("../img/space.png");
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.stars {
+  height: 100vh;
+  background-image: url("../img/stars.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0;
+  -webkit-animation-name: blink;
+          animation-name: blink;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate-reverse;
+          animation-direction: alternate-reverse; }
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes blink {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+.orbit {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
+  .orbit .moon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
+  .orbit .rocket {
+    display: block;
+    position: relative;
+    top: -195px;
+    -webkit-transform-origin: 80px 230px;
+        -ms-transform-origin: 80px 230px;
+            transform-origin: 80px 230px;
+    -webkit-animation-name: rotate;
+            animation-name: rotate;
+    -webkit-animation-duration: 5s;
+            animation-duration: 5s;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite; }
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  50% {
+    -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg); }
+  100% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg); } }
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  50% {
+    -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg); }
+  100% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg); } }
+    .orbit .rocket::after {
+      display: inline-block;
+      position: relative;
+      top: -6px;
+      left: -10px;
+      width: 19px;
+      height: 45px;
+      background-image: url("../img/flame.svg");
+      background-position: 0;
+      content: '';
+      -webkit-animation-name: flame;
+              animation-name: flame;
+      -webkit-animation-duration: 1s;
+              animation-duration: 1s;
+      -webkit-animation-timing-function: steps(1);
+              animation-timing-function: steps(1);
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite; }
+
+@-webkit-keyframes flame {
+  0% {
+    background-position-x: 0; }
+  50% {
+    background-position-x: -29px; }
+  100% {
+    background-position-x: -56px; } }
+
+@keyframes flame {
+  0% {
+    background-position-x: 0; }
+  50% {
+    background-position-x: -29px; }
+  100% {
+    background-position-x: -56px; } }
